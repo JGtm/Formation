@@ -2,24 +2,21 @@ Ext.define('Formation.view.Viewport', {
     renderTo: Ext.getBody(),
     extend: 'Ext.container.Viewport',
     requires:[
-        'Ext.tab.Panel',
-        'Ext.layout.container.Border'
+    'Ext.tab.Panel',
+    'Ext.layout.container.Border'
     ],
 
     layout: {
-        type: 'border'
+	type: 'ux.center'
     },
 
     items: [{
-        region: 'west',
-        xtype: 'panel',
-        title: 'west',
-        width: 150
-    },{
-        region: 'center',
-        xtype: 'tabpanel',
-        items:[{
-            title: 'Center Tab 1'
-        }]
+	xtype: 'panel',
+	title: '<img width="10%" src="resources/images/logo_formation.png" />' + 'BIENVENUE PAR ICI COPAIN',
+	width: 800,
+	items:[{
+	    xtype: 'tabpanel',
+	    title: 'INSCRIS TOI'
+	}]
     }]
 });
