@@ -1,0 +1,40 @@
+{
+    "name": "FormaPlus",
+    "settings": {},
+    "xdsVersion": "2.2.0",
+    "xdsBuild": 908,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000499,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "6e34c422-69e5-4aa8-afbe-a11222c55fcc": {
+            "paths": [
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "8c74ef74-ae88-4f2c-87ad-6e7e9b7cc47e": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "6e34c422-69e5-4aa8-afbe-a11222c55fcc"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "8c74ef74-ae88-4f2c-87ad-6e7e9b7cc47e"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
