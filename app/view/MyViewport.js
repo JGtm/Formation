@@ -57,15 +57,16 @@ Ext.define('MyApp.view.MyViewport', {
                                 align: 'stretch',
                                 type: 'vbox'
                             },
-                            title: 'Menu',
                             items: [
                                 {
                                     xtype: 'button',
                                     flex: 1,
                                     id: 'btnpageperso',
+                                    enableToggle: true,
                                     text: 'espace perso',
                                     menu: {
                                         xtype: 'menu',
+                                        minWidth: 200,
                                         items: [
                                             {
                                                 xtype: 'menuitem',
@@ -125,7 +126,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         {
                                             xtype: 'panel',
                                             id: 'inscrire',
-                                            title: 's\'inscrire à une formation',
+                                            title: 'Accueil',
                                             tabConfig: {
                                                 xtype: 'tab',
                                                 id: 'configinscrire'
@@ -160,7 +161,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         {
                                             xtype: 'panel',
                                             id: 'listeformperso',
-                                            title: 'mes formations',
+                                            title: 'FAQ',
                                             tabConfig: {
                                                 xtype: 'tab',
                                                 id: 'configformperso'
@@ -213,7 +214,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         {
                                             xtype: 'panel',
                                             id: 'competence',
-                                            title: 'mes competences',
+                                            title: 'Contact',
                                             tabConfig: {
                                                 xtype: 'tab',
                                                 id: 'configcompetence'
@@ -268,7 +269,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         {
                                             xtype: 'panel',
                                             id: 'cours',
-                                            title: 'cours',
+                                            title: 'À Propos',
                                             tabConfig: {
                                                 xtype: 'tab',
                                                 id: 'configcours'
@@ -321,7 +322,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         {
                                             xtype: 'panel',
                                             id: 'question',
-                                            title: 'poser une question',
+                                            title: 'Formations',
                                             tabConfig: {
                                                 xtype: 'tab',
                                                 id: 'configquestion'

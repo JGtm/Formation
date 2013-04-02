@@ -84,7 +84,7 @@
                         "designer|userClassName": "MyPanel1",
                         "designer|displayName": "nav",
                         "layout": "vbox",
-                        "title": "Menu"
+                        "title": null
                     },
                     "configAlternates": {
                         "style": "string"
@@ -103,6 +103,8 @@
                                 "id": "btnpageperso",
                                 "designer|userClassName": "MyButton",
                                 "designer|displayName": "btnpageperso",
+                                "enableToggle": true,
+                                "scale": null,
                                 "text": "espace perso"
                             },
                             "designerId": "4063efdd-e095-4727-af2e-9a7fcce7f350",
@@ -115,6 +117,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "minWidth": 200,
                                         "designer|userClassName": "MyMenu"
                                     },
                                     "designerId": "0e58ff18-1205-4135-b790-0b29d1f8e490",
@@ -281,7 +284,7 @@
                                         "id": "inscrire",
                                         "designer|userClassName": "MyPanel4",
                                         "designer|displayName": "inscrire",
-                                        "title": "s'inscrire à une formation"
+                                        "title": "Accueil"
                                     },
                                     "designerId": "c85fee34-9845-4579-a67d-9dcf17e73421",
                                     "cn": [
@@ -372,7 +375,7 @@
                                         "id": "listeformperso",
                                         "designer|userClassName": "MyPanel5",
                                         "designer|displayName": "listeformperso",
-                                        "title": "mes formations"
+                                        "title": "FAQ"
                                     },
                                     "designerId": "a8e81922-1037-4198-b75b-b61c46c95179",
                                     "cn": [
@@ -520,7 +523,7 @@
                                         "id": "competence",
                                         "designer|userClassName": "MyPanel6",
                                         "designer|displayName": "competence",
-                                        "title": "mes competences"
+                                        "title": "Contact"
                                     },
                                     "designerId": "981a9fff-03c7-4985-a50a-e06d21e897f9",
                                     "cn": [
@@ -682,7 +685,7 @@
                                         "id": "cours",
                                         "designer|userClassName": "MyPanel9",
                                         "designer|displayName": "cours",
-                                        "title": "cours"
+                                        "title": "À Propos"
                                     },
                                     "designerId": "f278d535-9113-44b1-b232-c7e5d0d1dacd",
                                     "cn": [
@@ -830,7 +833,7 @@
                                         "id": "question",
                                         "designer|userClassName": "MyPanel10",
                                         "designer|displayName": "question",
-                                        "title": "poser une question"
+                                        "title": "Formations"
                                     },
                                     "designerId": "62eb7238-2b98-477e-afe1-e5cfc8876cad",
                                     "cn": [
