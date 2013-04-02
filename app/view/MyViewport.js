@@ -16,6 +16,7 @@
 Ext.define('MyApp.view.MyViewport', {
     extend: 'Ext.container.Viewport',
 
+    margin: '0 auto',
     layout: {
         align: 'center',
         type: 'vbox'
@@ -27,56 +28,1206 @@ Ext.define('MyApp.view.MyViewport', {
         Ext.applyIf(me, {
             items: [
                 {
-                    xtype: 'panel',
+                    xtype: 'container',
                     height: 150,
-                    maxWidth: 700,
-                    width: 700,
-                    header: false,
-                    title: 'Header'
+                    id: 'border',
+                    width: 900,
+                    items: [
+                        {
+                            xtype: 'image',
+                            height: 150,
+                            id: 'logo',
+                            width: 150,
+                            src: 'images/logo.jpeg'
+                        }
+                    ]
                 },
                 {
-                    xtype: 'panel',
-                    maxWidth: 700,
-                    minHeight: 800,
-                    width: 700,
-                    layout: {
-                        align: 'stretch',
-                        type: 'hbox'
-                    },
-                    header: false,
-                    title: 'Body',
+                    xtype: 'container',
+                    id: 'container',
+                    minHeight: 600,
+                    width: 900,
                     items: [
                         {
                             xtype: 'panel',
-                            margins: '1',
-                            maxWidth: 200,
+                            id: 'nav',
+                            style: 'float: left;',
                             width: 200,
-                            title: 'Nav'
+                            layout: {
+                                align: 'stretch',
+                                type: 'vbox'
+                            },
+                            title: 'Menu',
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    id: 'btnpageperso',
+                                    text: 'espace perso',
+                                    menu: {
+                                        xtype: 'menu',
+                                        items: [
+                                            {
+                                                xtype: 'menuitem',
+                                                text: 'Menu Item'
+                                            },
+                                            {
+                                                xtype: 'menuitem',
+                                                text: 'Menu Item'
+                                            },
+                                            {
+                                                xtype: 'menuitem',
+                                                text: 'Menu Item'
+                                            },
+                                            {
+                                                xtype: 'menuitem',
+                                                text: 'Menu Item'
+                                            },
+                                            {
+                                                xtype: 'menuitem',
+                                                text: 'Menu Item'
+                                            },
+                                            {
+                                                xtype: 'menuitem',
+                                                text: 'Menu Item'
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    id: 'btnformateur',
+                                    text: 'espace formateur'
+                                },
+                                {
+                                    xtype: 'button',
+                                    flex: 1,
+                                    id: 'btnresponsable',
+                                    text: 'espace responsable'
+                                }
+                            ]
                         },
                         {
                             xtype: 'container',
-                            flex: 1,
+                            id: 'body',
+                            style: 'float : left',
+                            width: 700,
+                            layout: {
+                                type: 'card'
+                            },
                             items: [
                                 {
-                                    xtype: 'form',
-                                    bodyPadding: 10,
-                                    title: 'My Form',
+                                    xtype: 'tabpanel',
+                                    id: 'tabperso',
+                                    activeTab: 0,
                                     items: [
                                         {
-                                            xtype: 'textfield',
-                                            anchor: '100%',
-                                            maxWidth: 300,
-                                            fieldLabel: 'Identifiant'
+                                            xtype: 'panel',
+                                            id: 'inscrire',
+                                            title: 's\'inscrire à une formation',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configinscrire'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Inscription à une formation',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Choisir une formation'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            xtype: 'textfield',
-                                            anchor: '100%',
-                                            maxWidth: 300,
-                                            fieldLabel: 'Mot de passe'
+                                            xtype: 'panel',
+                                            id: 'listeformperso',
+                                            title: 'mes formations',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configformperso'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Mes formations',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'gridpanel',
+                                                                    header: false,
+                                                                    title: 'Liste de mes formations',
+                                                                    columns: [
+                                                                        {
+                                                                            xtype: 'gridcolumn',
+                                                                            dataIndex: 'string',
+                                                                            text: 'String'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'numbercolumn',
+                                                                            dataIndex: 'number',
+                                                                            text: 'Number'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'datecolumn',
+                                                                            dataIndex: 'date',
+                                                                            text: 'Date'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'booleancolumn',
+                                                                            dataIndex: 'bool',
+                                                                            text: 'Boolean'
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            xtype: 'button',
-                                            text: 'MyButton'
+                                            xtype: 'panel',
+                                            id: 'competence',
+                                            title: 'mes competences',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configcompetence'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Mes compétences',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'checkboxgroup',
+                                                                    items: [
+                                                                        {
+                                                                            xtype: 'checkboxfield',
+                                                                            boxLabel: 'PHP'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'checkboxfield',
+                                                                            boxLabel: 'C#'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'checkboxfield',
+                                                                            boxLabel: 'JAVA'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'checkboxfield',
+                                                                            boxLabel: 'ExtJS'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'checkboxfield',
+                                                                            boxLabel: 'VB'
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'cours',
+                                            title: 'cours',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configcours'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Proposition de cours',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'gridpanel',
+                                                                    header: false,
+                                                                    title: 'My Grid Panel',
+                                                                    columns: [
+                                                                        {
+                                                                            xtype: 'gridcolumn',
+                                                                            dataIndex: 'string',
+                                                                            text: 'String'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'numbercolumn',
+                                                                            dataIndex: 'number',
+                                                                            text: 'Number'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'datecolumn',
+                                                                            dataIndex: 'date',
+                                                                            text: 'Date'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'booleancolumn',
+                                                                            dataIndex: 'bool',
+                                                                            text: 'Boolean'
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'question',
+                                            title: 'poser une question',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configquestion'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Poser votre question à un formateur',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textareafield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Question'
+                                                                },
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Formateur'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'reponse',
+                                            title: 'mes reponses',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configreponse'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Mes réponses',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'gridpanel',
+                                                                    header: false,
+                                                                    title: 'My Grid Panel',
+                                                                    columns: [
+                                                                        {
+                                                                            xtype: 'gridcolumn',
+                                                                            dataIndex: 'string',
+                                                                            text: 'String'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'numbercolumn',
+                                                                            dataIndex: 'number',
+                                                                            text: 'Number'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'datecolumn',
+                                                                            dataIndex: 'date',
+                                                                            text: 'Date'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'booleancolumn',
+                                                                            dataIndex: 'bool',
+                                                                            text: 'Boolean'
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'article',
+                                            title: 'publier un article',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configarticle'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Publier un article',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Titre de l\'article'
+                                                                },
+                                                                {
+                                                                    xtype: 'textareafield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Corps de l\'article'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Publier'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'modifperso',
+                                            title: 'modifier infos',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configperso'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Modifier compte',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Login (email)'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Mot de passe'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'tabpanel',
+                                    id: 'tabformateur',
+                                    activeTab: 0,
+                                    items: [
+                                        {
+                                            xtype: 'panel',
+                                            id: 'listeformform',
+                                            title: 'liste formations',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configformform'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Formations à animer',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'gridpanel',
+                                                                    header: false,
+                                                                    title: 'My Grid Panel',
+                                                                    columns: [
+                                                                        {
+                                                                            xtype: 'gridcolumn',
+                                                                            dataIndex: 'string',
+                                                                            text: 'String'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'numbercolumn',
+                                                                            dataIndex: 'number',
+                                                                            text: 'Number'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'datecolumn',
+                                                                            dataIndex: 'date',
+                                                                            text: 'Date'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'booleancolumn',
+                                                                            dataIndex: 'bool',
+                                                                            text: 'Boolean'
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'modifmdpform',
+                                            title: 'modifier mot de passe',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configmdpform'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Modifier mon compte formateur',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Nouveau mot de passe'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Resaisir mot de passe'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'repondre',
+                                            title: 'répondre aux questions',
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Repondre aux questions que j\'ai reçues',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'gridpanel',
+                                                                    header: false,
+                                                                    title: 'My Grid Panel',
+                                                                    columns: [
+                                                                        {
+                                                                            xtype: 'gridcolumn',
+                                                                            dataIndex: 'string',
+                                                                            text: 'String'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'numbercolumn',
+                                                                            dataIndex: 'number',
+                                                                            text: 'Number'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'datecolumn',
+                                                                            dataIndex: 'date',
+                                                                            text: 'Date'
+                                                                        },
+                                                                        {
+                                                                            xtype: 'booleancolumn',
+                                                                            dataIndex: 'bool',
+                                                                            text: 'Boolean'
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'tabpanel',
+                                    id: 'tabresponsable',
+                                    activeTab: 0,
+                                    items: [
+                                        {
+                                            xtype: 'panel',
+                                            id: 'theme',
+                                            title: 'thèmes',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configtheme'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Les thèmes',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Thème existant'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Editer'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Supprimer'
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            collapsed: true,
+                                                            collapsible: true,
+                                                            title: 'Nouveau thème',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Saisir un thème'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'formateur',
+                                            title: 'formateurs',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configformateur'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Les formateurs',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Formateur existant'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Editer'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Supprimer'
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            collapsed: true,
+                                                            collapsible: true,
+                                                            title: 'Nouveau formateur',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Nom'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Prénom'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Login (email)'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Mot de passe'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'lieu',
+                                            autoScroll: true,
+                                            title: 'lieux',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configlieu'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Les lieux',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Lieu existant'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Editer'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Supprimer'
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            collapsed: true,
+                                                            collapsible: true,
+                                                            title: 'Nouveau lieu',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Nom du lieu'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Adresse'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Code postal'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Region'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Pays'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'evenement',
+                                            title: 'évènements',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configevenement'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Les évènements',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Evènement existant'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Editer'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Supprimer'
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            collapsed: true,
+                                                            collapsible: true,
+                                                            title: 'Nouvel évènement',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Libellé'
+                                                                },
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Date de début'
+                                                                },
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Date de fin'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'formation',
+                                            title: 'formations',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configformation'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Les formations',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Formation existante'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Editer'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Supprimer'
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            collapsed: true,
+                                                            collapsible: true,
+                                                            title: 'Nouvelle formation',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Libellé'
+                                                                },
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Date de début'
+                                                                },
+                                                                {
+                                                                    xtype: 'datefield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Date de fin'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Nombres de places'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Cible'
+                                                                },
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Compétence requise'
+                                                                },
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Formateur'
+                                                                },
+                                                                {
+                                                                    xtype: 'combobox',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Lieu'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'liste',
+                                            title: 'liste générale',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configliste'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'tabpanel',
+                                                    id: 'listetab',
+                                                    activeTab: 0,
+                                                    items: [
+                                                        {
+                                                            xtype: 'panel',
+                                                            id: 'listeform',
+                                                            title: 'liste des formations',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                id: 'configlisteform'
+                                                            },
+                                                            items: [
+                                                                {
+                                                                    xtype: 'form',
+                                                                    bodyPadding: 10,
+                                                                    header: false,
+                                                                    title: 'My Form',
+                                                                    items: [
+                                                                        {
+                                                                            xtype: 'fieldset',
+                                                                            padding: 10,
+                                                                            title: 'Les formations',
+                                                                            items: [
+                                                                                {
+                                                                                    xtype: 'gridpanel',
+                                                                                    header: false,
+                                                                                    title: 'My Grid Panel',
+                                                                                    columns: [
+                                                                                        {
+                                                                                            xtype: 'gridcolumn',
+                                                                                            dataIndex: 'string',
+                                                                                            text: 'String'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'numbercolumn',
+                                                                                            dataIndex: 'number',
+                                                                                            text: 'Number'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'datecolumn',
+                                                                                            dataIndex: 'date',
+                                                                                            text: 'Date'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'booleancolumn',
+                                                                                            dataIndex: 'bool',
+                                                                                            text: 'Boolean'
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'panel',
+                                                            id: 'listefor',
+                                                            title: 'liste des formateurs',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                id: 'configlistefor'
+                                                            },
+                                                            items: [
+                                                                {
+                                                                    xtype: 'form',
+                                                                    bodyPadding: 10,
+                                                                    header: false,
+                                                                    title: 'My Form',
+                                                                    items: [
+                                                                        {
+                                                                            xtype: 'fieldset',
+                                                                            padding: 10,
+                                                                            title: 'Les formateurs',
+                                                                            items: [
+                                                                                {
+                                                                                    xtype: 'gridpanel',
+                                                                                    header: false,
+                                                                                    title: 'My Grid Panel',
+                                                                                    columns: [
+                                                                                        {
+                                                                                            xtype: 'gridcolumn',
+                                                                                            dataIndex: 'string',
+                                                                                            text: 'String'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'numbercolumn',
+                                                                                            dataIndex: 'number',
+                                                                                            text: 'Number'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'datecolumn',
+                                                                                            dataIndex: 'date',
+                                                                                            text: 'Date'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'booleancolumn',
+                                                                                            dataIndex: 'bool',
+                                                                                            text: 'Boolean'
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: 'panel',
+                                                            id: 'listelieu',
+                                                            title: 'liste des lieux',
+                                                            tabConfig: {
+                                                                xtype: 'tab',
+                                                                id: 'configlistelieu'
+                                                            },
+                                                            items: [
+                                                                {
+                                                                    xtype: 'form',
+                                                                    bodyPadding: 10,
+                                                                    header: false,
+                                                                    title: 'My Form',
+                                                                    items: [
+                                                                        {
+                                                                            xtype: 'fieldset',
+                                                                            padding: 10,
+                                                                            title: 'Les lieux',
+                                                                            items: [
+                                                                                {
+                                                                                    xtype: 'gridpanel',
+                                                                                    header: false,
+                                                                                    title: 'My Grid Panel',
+                                                                                    columns: [
+                                                                                        {
+                                                                                            xtype: 'gridcolumn',
+                                                                                            dataIndex: 'string',
+                                                                                            text: 'String'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'numbercolumn',
+                                                                                            dataIndex: 'number',
+                                                                                            text: 'Number'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'datecolumn',
+                                                                                            dataIndex: 'date',
+                                                                                            text: 'Date'
+                                                                                        },
+                                                                                        {
+                                                                                            xtype: 'booleancolumn',
+                                                                                            dataIndex: 'bool',
+                                                                                            text: 'Boolean'
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: 'panel',
+                                            id: 'modifmdpresp',
+                                            title: 'modifier mot de passe',
+                                            tabConfig: {
+                                                xtype: 'tab',
+                                                id: 'configmdpresp'
+                                            },
+                                            items: [
+                                                {
+                                                    xtype: 'form',
+                                                    bodyPadding: 10,
+                                                    header: false,
+                                                    title: 'My Form',
+                                                    items: [
+                                                        {
+                                                            xtype: 'fieldset',
+                                                            padding: 10,
+                                                            title: 'Modifier le mot de passe',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Nouveau mot de passe'
+                                                                },
+                                                                {
+                                                                    xtype: 'textfield',
+                                                                    anchor: '100%',
+                                                                    fieldLabel: 'Resaisir le mot de passe'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    text: 'Valider'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

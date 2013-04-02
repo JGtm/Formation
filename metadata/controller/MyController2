@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController2"
+    },
+    "designerId": "c84c80b6-ff46-4bde-9d11-3b2a05d99987",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onBtnresponsableClick",
+                "fn": "onBtnresponsableClick",
+                "implHandler": [
+                    "var respon = Ext.getCmp('body');\r",
+                    "respon.getLayout().setActiveItem(2);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#btnresponsable"
+            },
+            "designerId": "42b86860-673f-4d87-b06c-373f38859d4a"
+        }
+    ]
+}

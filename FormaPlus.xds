@@ -1,5 +1,5 @@
 {
-    "name": "FormaPlus",
+    "name": "formation",
     "settings": {},
     "xdsVersion": "2.2.0",
     "xdsBuild": 908,
@@ -7,7 +7,7 @@
     "upgradeVersion": 210000000499,
     "framework": "ext42",
     "topInstanceFileMap": {
-        "6e34c422-69e5-4aa8-afbe-a11222c55fcc": {
+        "b322a458-392b-49cd-ad2a-f943edbd4409": {
             "paths": [
                 "metadata/view/MyViewport",
                 "app/view/override/MyViewport.js",
@@ -16,22 +16,50 @@
             ],
             "className": "MyViewport"
         },
-        "8c74ef74-ae88-4f2c-87ad-6e7e9b7cc47e": {
+        "ffb70f64-4185-4fb7-8594-7550535f6e08": {
             "paths": [
                 "metadata/resource/Library"
             ],
             "className": "Library"
+        },
+        "6b4e5be9-aff9-4ce7-a4d5-63def0c1aab4": {
+            "paths": [
+                "metadata/controller/MyController",
+                "app/controller/override/MyController.js",
+                "app/controller/MyController.js"
+            ],
+            "className": "MyController"
+        },
+        "1101da8c-65f1-44e0-9356-490fcb677676": {
+            "paths": [
+                "metadata/controller/MyController1",
+                "app/controller/override/MyController1.js",
+                "app/controller/MyController1.js"
+            ],
+            "className": "MyController1"
+        },
+        "c84c80b6-ff46-4bde-9d11-3b2a05d99987": {
+            "paths": [
+                "metadata/controller/MyController2",
+                "app/controller/override/MyController2.js",
+                "app/controller/MyController2.js"
+            ],
+            "className": "MyController2"
         }
     },
     "viewOrderMap": {
         "view": [
-            "6e34c422-69e5-4aa8-afbe-a11222c55fcc"
+            "b322a458-392b-49cd-ad2a-f943edbd4409"
         ],
         "store": [],
-        "controller": [],
+        "controller": [
+            "6b4e5be9-aff9-4ce7-a4d5-63def0c1aab4",
+            "1101da8c-65f1-44e0-9356-490fcb677676",
+            "c84c80b6-ff46-4bde-9d11-3b2a05d99987"
+        ],
         "model": [],
         "resource": [
-            "8c74ef74-ae88-4f2c-87ad-6e7e9b7cc47e"
+            "ffb70f64-4185-4fb7-8594-7550535f6e08"
         ],
         "app": [
             "application"

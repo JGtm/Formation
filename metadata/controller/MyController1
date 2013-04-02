@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController1"
+    },
+    "designerId": "1101da8c-65f1-44e0-9356-490fcb677676",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onBtnformateurClick",
+                "fn": "onBtnformateurClick",
+                "implHandler": [
+                    "var form = Ext.getCmp('body');\r",
+                    "form.getLayout().setActiveItem(1);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#btnformateur"
+            },
+            "designerId": "de721162-15b9-4631-a069-5851a48dc783"
+        }
+    ]
+}
