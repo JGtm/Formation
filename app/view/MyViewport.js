@@ -31,11 +31,32 @@ Ext.define('MyApp.view.MyViewport', {
                     xtype: 'container',
                     height: 150,
                     id: 'border',
+                    style: 'background-color:white;',
                     width: 900,
+                    layout: {
+                        type: 'border'
+                    },
                     items: [
                         {
+                            xtype: 'panel',
+                            region: 'east',
+                            width: 100,
+                            layout: {
+                                type: 'column'
+                            },
+                            header: false,
+                            title: 'My Panel',
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    iconAlign: 'right',
+                                    text: 'Se Connecter'
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'image',
-                            height: 150,
+                            region: 'west',
                             id: 'logo',
                             width: 150,
                             src: 'images/logo.jpeg'
@@ -46,73 +67,77 @@ Ext.define('MyApp.view.MyViewport', {
                     xtype: 'container',
                     id: 'container',
                     minHeight: 600,
+                    style: 'background-color:white;',
                     width: 900,
                     items: [
                         {
                             xtype: 'panel',
-                            id: 'nav',
                             style: 'float: left;',
                             width: 200,
                             layout: {
-                                align: 'stretch',
+                                pack: 'center',
                                 type: 'vbox'
                             },
+                            title: 'Nos Formations',
                             items: [
                                 {
-                                    xtype: 'button',
-                                    flex: 1,
-                                    id: 'btnpageperso',
-                                    enableToggle: true,
-                                    text: 'espace perso',
-                                    menu: {
-                                        xtype: 'menu',
-                                        minWidth: 200,
-                                        items: [
-                                            {
-                                                xtype: 'menuitem',
-                                                text: 'Menu Item'
-                                            },
-                                            {
-                                                xtype: 'menuitem',
-                                                text: 'Menu Item'
-                                            },
-                                            {
-                                                xtype: 'menuitem',
-                                                text: 'Menu Item'
-                                            },
-                                            {
-                                                xtype: 'menuitem',
-                                                text: 'Menu Item'
-                                            },
-                                            {
-                                                xtype: 'menuitem',
-                                                text: 'Menu Item'
-                                            },
-                                            {
-                                                xtype: 'menuitem',
-                                                text: 'Menu Item'
+                                    xtype: 'panel',
+                                    id: 'nav',
+                                    style: 'float: left;',
+                                    width: 200,
+                                    layout: {
+                                        align: 'stretch',
+                                        type: 'vbox'
+                                    },
+                                    items: [
+                                        {
+                                            xtype: 'button',
+                                            flex: 1,
+                                            autoRender: false,
+                                            id: 'btnpageperso',
+                                            rtl: false,
+                                            allowDepress: false,
+                                            enableToggle: true,
+                                            text: 'Développement',
+                                            menu: {
+                                                xtype: 'menu',
+                                                width: 120,
+                                                items: [
+                                                    {
+                                                        xtype: 'menuitem',
+                                                        text: 'Menu Item'
+                                                    },
+                                                    {
+                                                        xtype: 'menuitem',
+                                                        text: 'Menu Item'
+                                                    },
+                                                    {
+                                                        xtype: 'menuitem',
+                                                        text: 'Menu Item'
+                                                    }
+                                                ]
                                             }
-                                        ]
-                                    }
-                                },
-                                {
-                                    xtype: 'button',
-                                    flex: 1,
-                                    id: 'btnformateur',
-                                    text: 'espace formateur'
-                                },
-                                {
-                                    xtype: 'button',
-                                    flex: 1,
-                                    id: 'btnresponsable',
-                                    text: 'espace responsable'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            flex: 1,
+                                            id: 'btnformateur',
+                                            text: 'Réseau'
+                                        },
+                                        {
+                                            xtype: 'button',
+                                            flex: 1,
+                                            id: 'btnresponsable',
+                                            text: 'Autres'
+                                        }
+                                    ]
                                 }
                             ]
                         },
                         {
                             xtype: 'container',
                             id: 'body',
-                            style: 'float : left',
+                            style: 'float : right',
                             width: 700,
                             layout: {
                                 type: 'card'
@@ -361,6 +386,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         },
                                         {
                                             xtype: 'panel',
+                                            hidden: true,
                                             id: 'reponse',
                                             title: 'mes reponses',
                                             tabConfig: {
@@ -414,6 +440,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         },
                                         {
                                             xtype: 'panel',
+                                            hidden: true,
                                             id: 'article',
                                             title: 'publier un article',
                                             tabConfig: {
@@ -454,6 +481,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         },
                                         {
                                             xtype: 'panel',
+                                            hidden: true,
                                             id: 'modifperso',
                                             title: 'modifier infos',
                                             tabConfig: {
@@ -554,6 +582,7 @@ Ext.define('MyApp.view.MyViewport', {
                                         },
                                         {
                                             xtype: 'panel',
+                                            hidden: true,
                                             id: 'modifmdpform',
                                             title: 'modifier mot de passe',
                                             tabConfig: {

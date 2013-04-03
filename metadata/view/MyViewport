@@ -27,12 +27,49 @@
             "userConfig": {
                 "height": 150,
                 "id": "border",
+                "style": [
+                    "background-color:white;"
+                ],
                 "width": 900,
                 "designer|userClassName": "MyContainer",
-                "designer|displayName": "border"
+                "designer|displayName": "border",
+                "layout": "border"
             },
             "designerId": "1a050bf7-544d-497f-8284-0a6a8150be35",
             "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "east",
+                        "width": 100,
+                        "designer|userClassName": "MyPanel23",
+                        "layout": "column",
+                        "header": false,
+                        "title": "My Panel"
+                    },
+                    "designerId": "de0df7d2-ca91-4413-93f9-e870073f8ff0",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton25",
+                                "iconAlign": "right",
+                                "text": "Se Connecter"
+                            },
+                            "designerId": "da9feeae-b704-4be7-ae43-2bdc64f03154"
+                        }
+                    ]
+                },
                 {
                     "type": "Ext.Img",
                     "reference": {
@@ -41,7 +78,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 150,
+                        "layout|region": "west",
                         "id": "logo",
                         "width": 150,
                         "designer|userClassName": "MyImg",
@@ -63,6 +100,9 @@
                 "height": null,
                 "id": "container",
                 "minHeight": 600,
+                "style": [
+                    "background-color:white;"
+                ],
                 "width": 900,
                 "designer|userClassName": "MyContainer1",
                 "designer|displayName": "container"
@@ -77,164 +117,149 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "container|align": "stretch",
-                        "id": "nav",
-                        "style": "float: left;",
+                        "container|pack": "center",
+                        "style": [
+                            "float: left;"
+                        ],
                         "width": 200,
-                        "designer|userClassName": "MyPanel1",
-                        "designer|displayName": "nav",
+                        "designer|userClassName": "MyPanel22",
                         "layout": "vbox",
-                        "title": null
+                        "title": "Nos Formations"
                     },
-                    "configAlternates": {
-                        "style": "string"
-                    },
-                    "designerId": "419276b5-e740-47d1-8efd-d9b7f0b4de7e",
+                    "designerId": "e4432028-def4-463d-a27f-a2260c6d1b6a",
                     "cn": [
                         {
-                            "type": "Ext.button.Button",
+                            "type": "Ext.panel.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "id": "btnpageperso",
-                                "designer|userClassName": "MyButton",
-                                "designer|displayName": "btnpageperso",
-                                "enableToggle": true,
-                                "scale": null,
-                                "text": "espace perso"
+                                "container|align": "stretch",
+                                "id": "nav",
+                                "style": "float: left;",
+                                "width": 200,
+                                "designer|userClassName": "MyPanel1",
+                                "designer|displayName": "Nos Formations",
+                                "layout": "vbox",
+                                "title": null
                             },
-                            "designerId": "4063efdd-e095-4727-af2e-9a7fcce7f350",
+                            "configAlternates": {
+                                "style": "string"
+                            },
+                            "designerId": "419276b5-e740-47d1-8efd-d9b7f0b4de7e",
                             "cn": [
                                 {
-                                    "type": "Ext.menu.Menu",
+                                    "type": "Ext.button.Button",
                                     "reference": {
-                                        "name": "menu",
-                                        "type": "object"
+                                        "name": "items",
+                                        "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "minWidth": 200,
-                                        "designer|userClassName": "MyMenu"
+                                        "layout|flex": 1,
+                                        "autoRender": false,
+                                        "id": "btnpageperso",
+                                        "rtl": false,
+                                        "designer|userClassName": "MyButton",
+                                        "designer|displayName": "btnpageperso",
+                                        "allowDepress": false,
+                                        "enableToggle": true,
+                                        "scale": null,
+                                        "text": "Développement"
                                     },
-                                    "designerId": "0e58ff18-1205-4135-b790-0b29d1f8e490",
+                                    "designerId": "4063efdd-e095-4727-af2e-9a7fcce7f350",
                                     "cn": [
                                         {
-                                            "type": "Ext.menu.Item",
+                                            "type": "Ext.menu.Menu",
                                             "reference": {
-                                                "name": "items",
-                                                "type": "array"
+                                                "name": "menu",
+                                                "type": "object"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyMenuItem",
-                                                "text": "Menu Item"
+                                                "width": 120,
+                                                "designer|userClassName": "MyMenu"
                                             },
-                                            "designerId": "a9306118-5be4-4012-b4aa-c6c1fc975ef5"
-                                        },
-                                        {
-                                            "type": "Ext.menu.Item",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyMenuItem1",
-                                                "text": "Menu Item"
-                                            },
-                                            "designerId": "2f2373b9-afdd-411b-9073-de97023e2f62"
-                                        },
-                                        {
-                                            "type": "Ext.menu.Item",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyMenuItem2",
-                                                "text": "Menu Item"
-                                            },
-                                            "designerId": "b0331e27-a1ba-4c65-b0ba-3e9abe9fb7fb"
-                                        },
-                                        {
-                                            "type": "Ext.menu.Item",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyMenuItem3",
-                                                "text": "Menu Item"
-                                            },
-                                            "designerId": "517a8078-ffc3-4286-8aa0-9634835326a6"
-                                        },
-                                        {
-                                            "type": "Ext.menu.Item",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyMenuItem4",
-                                                "text": "Menu Item"
-                                            },
-                                            "designerId": "334ced42-138c-4e9d-b466-f2fb612be775"
-                                        },
-                                        {
-                                            "type": "Ext.menu.Item",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyMenuItem5",
-                                                "text": "Menu Item"
-                                            },
-                                            "designerId": "eba7fe08-c8cc-48b5-b90c-57864db6d365"
+                                            "designerId": "175ce43d-5a30-45f3-86f1-9e99baca3be4",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.menu.Item",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyMenuItem",
+                                                        "text": "Menu Item"
+                                                    },
+                                                    "designerId": "53bcf10d-f365-4115-ae23-44d2b0dc5c30"
+                                                },
+                                                {
+                                                    "type": "Ext.menu.Item",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyMenuItem1",
+                                                        "text": "Menu Item"
+                                                    },
+                                                    "designerId": "eb45f5a5-2fd5-4512-bfd5-e8ce82790f2c"
+                                                },
+                                                {
+                                                    "type": "Ext.menu.Item",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyMenuItem2",
+                                                        "text": "Menu Item"
+                                                    },
+                                                    "designerId": "91486ac6-a7dd-4db3-b73e-755e9cab7c80"
+                                                }
+                                            ]
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "id": "btnformateur",
+                                        "designer|userClassName": "MyButton1",
+                                        "designer|displayName": "btnformateur",
+                                        "text": "Réseau"
+                                    },
+                                    "designerId": "6c5d2815-835e-4256-8317-0dfa9818261d"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "id": "btnresponsable",
+                                        "designer|userClassName": "MyButton2",
+                                        "designer|displayName": "btnresponsable",
+                                        "text": "Autres"
+                                    },
+                                    "designerId": "f6409dca-4dff-4eb5-8e64-2ccaa935329b"
                                 }
                             ]
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": 1,
-                                "id": "btnformateur",
-                                "designer|userClassName": "MyButton1",
-                                "designer|displayName": "btnformateur",
-                                "text": "espace formateur"
-                            },
-                            "designerId": "6c5d2815-835e-4256-8317-0dfa9818261d"
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": 1,
-                                "id": "btnresponsable",
-                                "designer|userClassName": "MyButton2",
-                                "designer|displayName": "btnresponsable",
-                                "text": "espace responsable"
-                            },
-                            "designerId": "f6409dca-4dff-4eb5-8e64-2ccaa935329b"
                         }
                     ]
                 },
@@ -247,7 +272,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "body",
-                        "style": "float : left",
+                        "style": "float : right",
                         "width": 700,
                         "designer|userClassName": "MyContainer2",
                         "designer|displayName": "body",
@@ -269,6 +294,7 @@
                                 "id": "tabperso",
                                 "designer|userClassName": "MyTabPanel1",
                                 "designer|displayName": "tabperso",
+                                "defaultAlign": null,
                                 "activeTab": 0
                             },
                             "designerId": "29207710-d551-4b8b-ba99-33debc30546c",
@@ -284,7 +310,8 @@
                                         "id": "inscrire",
                                         "designer|userClassName": "MyPanel4",
                                         "designer|displayName": "inscrire",
-                                        "title": "Accueil"
+                                        "title": "Accueil",
+                                        "titleAlign": null
                                     },
                                     "designerId": "c85fee34-9845-4579-a67d-9dcf17e73421",
                                     "cn": [
@@ -298,7 +325,8 @@
                                             "userConfig": {
                                                 "id": "configinscrire",
                                                 "designer|userClassName": "TabConfig3",
-                                                "designer|displayName": "configinscrire"
+                                                "designer|displayName": "configinscrire",
+                                                "iconAlign": null
                                             },
                                             "designerId": "c4762ad8-b5e8-48b7-aacc-6094b993042c"
                                         },
@@ -935,6 +963,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "hidden": true,
                                         "id": "reponse",
                                         "designer|userClassName": "MyPanel11",
                                         "designer|displayName": "reponse",
@@ -1083,6 +1112,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "hidden": true,
                                         "id": "article",
                                         "designer|userClassName": "MyPanel12",
                                         "designer|displayName": "article",
@@ -1188,6 +1218,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "hidden": true,
                                         "id": "modifperso",
                                         "designer|userClassName": "MyPanel13",
                                         "designer|displayName": "modifperso",
@@ -1458,6 +1489,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "hidden": true,
                                         "id": "modifmdpform",
                                         "designer|userClassName": "MyPanel8",
                                         "designer|displayName": "modifmdpform",
